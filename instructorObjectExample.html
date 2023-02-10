@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Instructor Object</title>
+    <script type="text/javascript" src="scripts/showPropertyOfObject.js"></script>
+    <script type="text/javascript" src="scripts/instructorConstructor.js"></script>
+</head>
+<body>
+  <p id="displayArea"></p>
+  <script>
+    "use strict";
+
+    function displayInformation(object)
+    {
+       let displayString ="";
+       displayString += object.fname+ " "+ object.lName+ " has been assigned for these courses "+ object.courseTaken +
+               " in that room- "+ object.rNumber+ "for the program "+ object.programName;
+
+       return displayString;
+    }
+
+    let instructor1 = new instructorConstructor("A","B",123,["CS123","CS345"]);
+    instructor1.programHead = "G";
+    // instructor1.programName = "CST";
+    //
+    // instructor1.displayInformation1 = function (){
+    //     let displayString ="";
+    //     displayString += this.fname+ " "+ this.lName+ " has been assigned for these courses "+ this.courseTaken +
+    //             " in that room- "+ this.rNumber+ "for the program "+ this.programName;
+    //
+    //     return displayString;
+    // }
+
+    let instructor2 = new instructorConstructor("C","D",345,["CS567","CS789"])
+
+    // document.write("<p>"+showPropertyValuePair(instructor1)+"</p>");
+    // document.write("<p>"+showPropertyValuePair(instructor2)+"</p>");
+    //
+    // document.write("<p>"+instructor1.displayInformation1()+"</p>");
+    // document.write("<p>"+displayInformation(instructor2)+"</p>");
+
+    const displayArea = document.getElementById("displayArea");
+
+    instructorConstructor.prototype.programName = "CST";
+
+    instructorConstructor.prototype.displayInfo = function ()
+    {
+        let displayString ="";
+            displayString += this.fname+ " "+ this.lName+ " has been assigned for these courses "+ this.courseTaken +
+                   " in that room- "+ this.rNumber+ "for the program "+ this.programName;
+
+             return displayString;
+    }
+
+
+
+    displayArea.innerHTML = showPropertyValuePair(instructor1)+"</br>";
+    displayArea.innerHTML += instructor1.displayInfo()+"</br>";
+    displayArea.innerHTML += showPropertyValuePair(instructor2)+"</br>";
+    displayArea.innerHTML += instructor2.displayInfo()+"</br>";
+
+
+
+  </script>
+</body>
+</html>

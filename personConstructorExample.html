@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Constructor Example</title>
+    <script src="scripts/showPropertyOfObject.js"> </script>
+</head>
+<body>
+  <script>
+    "use strict";
+
+    function personConstructor(firstName,lastName,age,gender,city,rivals)
+    {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.gender = gender;
+      this.city = city;
+      this.rivals = rivals;
+
+      this.greet = function(){
+        // document.getElementById("pid").innerHTML = "Hi : "+ this.firstName+ " "+ this.lastName;
+        console.log("Hi : "+ this.firstName+ " "+ this.lastName);
+      }
+    }
+
+    let person1 = new personConstructor("Test1","Test2",12,"m","anything",["a","b"]);
+    let person2 = new personConstructor("Test2","Test3",15,"f","anything","sample");
+
+    person1.greet();
+    person2.greet();
+
+    document.write("<p>"+showPropertyValuePair(person1)+"</p>")
+    document.write("<p>"+showPropertyValuePair(person2)+"</p>")
+
+
+  </script>
+</body>
+</html>

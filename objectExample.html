@@ -13,7 +13,7 @@
 
     b.name = "Batman";
     // b.Name = "Another Name";
-    b.rivals = ["Joker", "Poison Ivy"];;
+    b.rivals = ["Joker", "Poison Ivy"];
     b.greet = function (){
       return "hi, i am "+ this.name;
     };
@@ -34,7 +34,7 @@
         }
     }
 
-    console.log(r.name+" "+r.age+" "+r.rivals[0]+"\n"+r.greet());
+    // console.log(r.name+" "+r.age+" "+r.rivals[0]+"\n"+r.greet());
 
     r.prop1 = "new property1";
     r["prop2"] = "new Property2";
@@ -44,7 +44,12 @@
     }
 
 
-    console.log(r.prop1+" "+r.prop2+" "+r.age+"\n"+"new age: "+r.setAgeValue());
+    // console.log(r.prop1+" "+r.prop2+" "+r.age+"\n"+"new age: "+r.setAgeValue());
+
+    for (const prop in r)
+    {
+        console.log("Property Name: "+prop+ " , Property value: "+r[prop]);
+    }
 
   </script>
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Person Object</title>
+    <script type="text/javascript" src="scripts/showPropertyOfObject.js"></script>
+</head>
+<body>
+  <p id="pid"></p>
+  <script>
+     "use strict";
+
+     let person = {
+       name: "BatMan",
+       city: "Gotham",
+       rivals: ["Joker", "Riddler"]
+     }
+
+    document.getElementById("pid").innerHTML = showPropertyValuePair(person);
+
+  </script>
+</body>
+</html>
