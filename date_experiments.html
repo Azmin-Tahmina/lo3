@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Filename:   date_experiments.html
+    Author:     Michael Grzesina (cst000)
+    Date:       2/5/2019
+    Purpose:    Use the JavaScript built-in Date object
+-->
+<head>
+   <meta charset="UTF-8">
+   <title>Date Experiments</title>
+</head>
+<body>
+   <p>Today's date is <span id="today"></span></p>
+   <p>My birthday is <span id="birthday"></span></p>
+   <p>90 days in the future, it will be <span id="ninety"></span></p>
+
+   <script>
+      "use strict";
+
+      const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+            "October", "November", "December"];
+
+      let today = new Date();
+      let birthday = new Date(1968, 11, 17); // or new Date("December 17, 1968")
+      let ninetyDays = new Date();
+      ninetyDays.setDate(ninetyDays.getDate() + 90);
+
+      document.getElementById("today").innerHTML = today.toString();
+      document.getElementById("birthday").innerHTML = birthday.toString();
+      document.getElementById("ninety").innerHTML = monthArray[ninetyDays.getMonth()] + " "
+            + ninetyDays.getDate() + ", "
+            + ninetyDays.getFullYear();
+   </script>
+</body>
+</html>

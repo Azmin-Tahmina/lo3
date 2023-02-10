@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Argument Function Example</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    const passArray = [1,1,2,3,4,5,6,7];
+
+    // adding the arguments
+    function argumentExample1(a,b=6)
+    {
+        return a+b;
+    }
+
+    // Passing array as arguments
+    function argumentExample2(argArray)
+    {
+        let sum = 0;
+        for(let i=0;i<argArray.length;i++)
+        {
+           sum += argArray[i];
+        }
+
+        return sum;
+    }
+
+    //Example of default argument parameter for a function
+    function argumentExample3()
+    {
+        let sum = 0;
+        for(let i=0;i<arguments.length;i++)
+        {
+          sum += arguments[i];
+        }
+
+        return sum;
+    }
+
+
+    function argumentExample4(...theArgs)
+    {
+        return theArgs.reduce((previousValue,currentValue) => previousValue+currentValue);
+    }
+
+
+    document.write("<p>Sum of two numbers is " + argumentExample1("test", 4) + "</p>");
+    document.write("<p>Sum of number plus the default is " + argumentExample1("test") + "</p>");
+    //
+    document.write("<p>Sum of two numbers is " + argumentExample1(3, 4) + "</p>");
+    document.write("<p>Sum of number plus the default is " + argumentExample1(3) + "</p>");
+
+    document.write("<p>Sum of the array " + passArray + " is " + argumentExample2(passArray) + "</p>");
+
+    document.write("<p>Sum of the argument values is " + argumentExample3(1,1,2,3,4,5,6,7,8) + "</p>");
+
+    document.write("<p>Sum of rest argument values is " + argumentExample4(1,1,2,3,4,5,6,7,8,9,10) + "</p>");
+
+  </script>
+</body>
+</html>

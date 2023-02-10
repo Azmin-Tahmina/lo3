@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Filename:   instructor_example.html
+    Author:     Michael Grzesina (cst000)
+    Date:       2/8/2019
+    Purpose:    
+-->
+<head>
+   <meta charset="UTF-8">
+   <title>Instructor example</title>
+   <script src="scripts/showprops.js"></script>
+   <script src="scripts/Instructor.js"></script>
+</head>
+<body>
+   <h1>Instructor objects</h1>
+   <div id="output1"></div>
+
+   <script>
+      const ins1 = new Instructor("Michael", "240A.5", "Beardy");
+      const ins2 = new Instructor("Coralee", "240A.4", "Insightful");
+      const tcommIns = new Instructor("Susan", "Ave W", "Fictional");
+      tcommIns.program = "Communications";
+
+      // This would add the displayInfo method only to the ins1 object
+      // ins1.displayInfo = function() {
+      //     return this.name + " is in " + this.officeNumber
+      //         + " and is " + this.quirks;
+      // };
+
+      const outputArea = document.getElementById("output1");
+      outputArea.innerHTML = showProps("Instructor", ins1);
+      outputArea.innerHTML += ins1.displayInfo() + "<br />";
+      outputArea.innerHTML += "<br />" + showProps("Instructor", ins2);
+      outputArea.innerHTML += ins2.displayInfo() + "<br />";
+      outputArea.innerHTML += "<br />" + showProps("Instructor", tcommIns);
+      outputArea.innerHTML += tcommIns.displayInfo();
+   </script>
+</body>
+</html>

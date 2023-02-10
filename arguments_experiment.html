@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Filename:   arguments_experiment.html
+    Author:     Michael Grzesina (cst000)
+    Date:       2/5/2019
+    Purpose:    
+-->
+<head>
+   <meta charset="UTF-8">
+   <title>Arguments Experiment</title>
+</head>
+<body>
+   <h1>Arguments Experiment</h1>
+
+   <script>
+      "use strict";
+
+      const sampleArray = [1, 1, 2, 3, 5, 8];
+
+	  
+      // In ES6+, you can add a default value to a parameter in a function
+      // Previously, you had to test for undefined
+      function add2(a, b = 6) {
+          return a + b;
+      }
+
+
+      // expects to be passed an array of values to add up
+      function addArray(arValues) {
+          let sum = 0;
+          for (let i = 0; i < arValues.length; i++) {
+              sum += arValues[i];
+          }
+          return sum;
+      }
+
+
+      // can be passed any number of values using the arguments array-like object
+      function addArgs() {
+          let sum = 0;
+          for (let i = 0; i < arguments.length; i++) {
+              sum += arguments[i];
+          }
+          return sum;
+      }
+
+
+      // in ES6+, we can use "rest syntax" to get an array of the rest of the arguments
+      function addArgsRest(...theArgs) {
+          return theArgs.reduce((previous, current) => previous + current);
+      }
+
+
+
+      document.write("<p>Sum of two numbers is " + add2(3, 4) + "</p>");
+      document.write("<p>Sum of number plus the default is " + add2(3) + "</p>");
+      document.write("<p>Sum of the array " + sampleArray + " is " + addArray(sampleArray) + "</p>");
+      document.write("<p>Sum of the arguments is " + addArgs(1, 1, 2, 3, 5, 8) + "</p>");
+      document.write("<p>Sum of the arguments is " + addArgsRest(1, 1, 2, 3, 5, 8) + "</p>");
+   </script>
+</body>
+</html>

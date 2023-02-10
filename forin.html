@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Filename:   forin.html
+    Author:     Michael Grzesina (cst000)
+    Date:       2/5/2019
+    Purpose:    Experiment with for...in loops
+-->
+<head>
+   <meta charset="UTF-8">
+   <title>Listing properties with for...in</title>
+</head>
+<body>
+   <script>
+      "use strict";
+
+      let student = new Object();
+      student.name = "Mike";
+      student.year = 1;
+      student.classes = ["CWEB 180", "CWEB 190"];
+
+      for (const prop in student) {
+          document.write("<p>" + prop + " = " + student[prop] + "</p>");
+      }
+   </script>
+</body>
+</html>

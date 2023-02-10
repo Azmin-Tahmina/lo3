@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  Filename: returnedobject
+  Author:   Michael Grzesina (mg)
+  Date:     2/7/2018
+  Purpose:  To demonstrate the use of objects
+-->
+    <meta charset="UTF-8">
+    <title>Example of returning an object from a function</title>
+</head>
+<body>
+    <p><label>Name: <input id="name" /></label></p>
+    <p><label>Mark: <input id="mark" type="number" min="0" max="100" /></label></p>
+    <p><button>Click Me!</button></p>
+
+    <p>Sorted results:</p>
+    <ol id="results"></ol>
+
+    <script>
+        "use strict";
+
+        // array of students
+        let arResults = [];
+
+        // count of number of students
+        let count = 0;
+
+        // reference to sorted list of marks
+        const resultsList = document.querySelector("#results");
+
+        // references to name and mark input boxes
+        const nameInput = document.querySelector("#name");
+        const markInput = document.querySelector("#mark");
+
+
+        /*
+            Function: readValues
+            Purpose: read the values from two input boxes and return the results in an object
+            Parameters: none
+            Returns: an object with a name property and a mark property
+            Assumptions: valid input; ids given exist in document
+         */
+        function readValues() {
+            //TODO: get the values from input boxes and return as object with name and mark properties
+            // mark should be a number, not a string
+        }
+
+
+        /*
+            Function: anonymous
+            Purpose: display a list of marks entered one at a time
+            Parameters: none
+            Returns: nothing
+            Assumptions: relevant global variables exist
+         */
+        document.querySelector("button").addEventListener("click", function() {
+            let result; // object containing name and mark of student
+            let strResults = ""; // string for creating results list
+
+            // read result from input boxes and place in array
+            result = readValues();
+            window.alert(result.name + "\n" + result.mark + "\n" + result.toString());
+            arResults[count++] = result;
+
+            // sort results array in descending order by the mark property
+            arResults.sort(function(first, second) {
+                return second.mark - first.mark;
+            });
+
+            // loop through array adding each item to list
+            for (let i = 0; i < count; i++) {
+                strResults += "<li>" + arResults[i].name + " " + arResults[i].mark + "</li>";
+            }
+
+            // display list of results
+            resultsList.innerHTML = strResults;
+        });
+    </script>
+</body>
+</html>

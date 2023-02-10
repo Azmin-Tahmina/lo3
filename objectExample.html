@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Example</title>
+</head>
+<body>
+  <script>
+    "use strict";
+
+    let b = new Object();
+    // let r = {};
+
+    b.name = "Batman";
+    // b.Name = "Another Name";
+    b.rivals = ["Joker", "Poison Ivy"];;
+    b.greet = function (){
+      return "hi, i am "+ this.name;
+    };
+
+    console.log(b.greet());
+    console.log(b["name"]);
+    console.log(b["rivals"][0]);
+    console.log(b["rivals"][1]);
+
+    let r = {};
+
+    r = {
+        name: "Spider-Man",
+        age: 19,
+        rivals: ["Doc Oc"],
+        greet: function (){
+            return "hi, i am "+ this.name;
+        }
+    }
+
+    console.log(r.name+" "+r.age+" "+r.rivals[0]+"\n"+r.greet());
+
+    r.prop1 = "new property1";
+    r["prop2"] = "new Property2";
+    r.setAgeValue = function (){
+        this.age = 20;
+        return this.age;
+    }
+
+
+    console.log(r.prop1+" "+r.prop2+" "+r.age+"\n"+"new age: "+r.setAgeValue());
+
+  </script>
+
+</body>
+</html>

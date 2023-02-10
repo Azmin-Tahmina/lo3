@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Associative Array</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        //It will have the key value pair "key"=>"value"
+        // key will be 0,1,2
+        let normalArray = ["value1","value2","value3"];
+
+
+        let associativeArray = {key1:"value1",key2:"value2",key3:"value3"};
+
+
+        let person = {firstName:"test",lastName:"test",age:12,gender:"f"}
+
+        function testFunction(key,value){
+            document.write("key:" + key + "value: "+value);
+        }
+
+        person.forEach(testFunction);
+
+
+
+    </script>
+</body>
+</html>

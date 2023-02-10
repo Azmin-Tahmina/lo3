@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Example</title>
+</head>
+<body>
+   <h1>Working with Image Objects</h1>
+   <div>
+     <img id="img1" src="media/HappyFaceNoSmile.jpg" alt="Smiley Face" />
+   </div>
+   <script>
+     "use strict";
+     let preloadImage = new Image();
+     preloadImage.src = "media/HappyFaceSmile.jpg";
+
+     document.getElementById("img1").onmouseover = happyFace;
+     document.getElementById("img1").onmouseout = nosmileFace;
+
+     //we could use addEventListener
+     // document.getElementById("img1").addEventListener("mouseout",nosmileFace);
+
+
+     function happyFace()
+     {
+          document.getElementById("img1").src = "media/HappyFaceSmile.jpg";
+     }
+
+     function nosmileFace()
+     {
+       document.getElementById("img1").src = "media/HappyFaceNoSmile.jpg";
+     }
+   </script>
+</body>
+</html>

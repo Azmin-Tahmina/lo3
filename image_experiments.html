@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Filename:   image_experiments.html
+    Author:     Michael Grzesina (cst000)
+    Date:       2/5/2019
+    Purpose:    
+-->
+<head>
+   <meta charset="UTF-8">
+   <title>Image Experiments</title>
+</head>
+<body>
+   <h1>Working with Image Objects</h1>
+   <div><img src="media/HappyFaceNoSmile.jpg" alt="Smiley Face" /></div>
+
+   <script>
+      "use strict";
+
+      // preload the image so that there is no time gap when the mouseover event occurs
+      let preloadedImage = new Image();
+      preloadedImage.src = "media/HappyFaceSmile.jpg";
+
+      document.querySelector("img").onmouseover = function() {
+          document.querySelector("img").src = "media/HappyFaceSmile.jpg";
+      };
+
+      document.querySelector("img").onmouseout = function() {
+          document.querySelector("img").src = "media/HappyFaceNoSmile.jpg";
+      };
+   </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Example</title>
+</head>
+<body>
+  <p>Today the date is <span id="todaydate"></span></p>
+  <p>Birthday is is <span id="birthday"></span></p>
+  <p>DateAhead is is <span id="dateAhead"></span></p>
+  <script>
+    "use strict";
+    let today = new Date();
+    let birthday = new Date(1889,7,11);
+    let dateAhead = new Date();
+    dateAhead.setDate(dateAhead.getDate()+90)
+
+    let arrayMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    // format: April 25, 2019
+
+    document.getElementById("todaydate").innerHTML = today.toString();
+    document.getElementById("birthday").innerHTML = birthday.toString();
+    document.getElementById("dateAhead").innerHTML = arrayMonths[dateAhead.getMonth()]+" "+dateAhead.getDate()+", "+dateAhead.getFullYear();
+  </script>
+</body>
+</html>
