@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collection of Pets</title>
+    <script src="scripts/petCollections.js"></script>
+    <style>
+      table,tr,th,td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">Information of Pets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Name:</td><td id="name"></td>
+      </tr>
+      <tr>
+        <td>Type:</td><td id="type"></td>
+      </tr>
+      <tr>
+        <td>License:</td><td id="license"></td>
+      </tr>
+      <tr>
+        <td>Image:</td><td id="image"></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button id="click1">Previous</button>
+          <button id="click">Next</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+  <script>
+    let pets = [];
+    pets[0] = new petConstructor("dog","animal",true,"image1");
+    pets[1] = new petConstructor("cat","animal",true,"image1");
+    pets[2] = new petConstructor("turtle","animal",true,"image1");
+    pets[3] = new petConstructor("fish","animal",true,"image1");
+    pets[4] = new petConstructor("snail","animal",true,"image1");
+
+    // pets[3].showData();
+
+    let count = 0;
+    let petsArrayLength = pets.length;
+
+    pets[count].showData();
+
+    // function for button next
+    function buttonClick()
+    {
+      if(count<petsArrayLength)
+      {
+        count++;
+        pets[count].showData();
+      }
+      // else
+      // {
+      //   count = 0;
+      // }
+    }
+
+    // function for button previous
+
+    document.getElementById("click").addEventListener("click",buttonClick);
+
+    // addEventListener
+
+
+  </script>
+</body>
+</html>

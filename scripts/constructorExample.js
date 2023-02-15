@@ -44,6 +44,16 @@ let fish = new fishConstructor("Nemo",true,"goldfish");
 console.log(fish.toString());
 
 
+petConstructor.prototype.makeSound = function(){
+    return this.name + " the " + this.animalType + " makes noise.";
+}
+
+
+fishConstructor.prototype.makeSound = function(){
+    return this.name + " the " + this.animalType + " swims silently";
+}
+
+
 //Create Dog Constructor
 
 //Create prototype

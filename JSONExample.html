@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON EXAMPLE</title>
+</head>
+<body>
+<p id="pid"></p>
+  <script>
+      let car = new Object();
+      car.make = "Dodge";
+      car.model = "Dart";
+      car.year = 1974;
+      car.color = "blue";
+      car.engine = "V6";
+
+      // it has no constructor
+
+      let stringCar = JSON.stringify(car);
+      document.getElementById("pid").innerHTML = stringCar;
+      let objectCar = JSON.parse(stringCar);
+      document.getElementById("pid").innerHTML = objectCar;
+
+
+
+  </script>
+</body>
+</html>
